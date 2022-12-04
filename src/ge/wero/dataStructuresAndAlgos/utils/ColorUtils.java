@@ -1,6 +1,6 @@
 package ge.wero.dataStructuresAndAlgos.utils;
 
-public class ConsoleColorCodes {
+public class ColorUtils {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";
     public static final String ANSI_RED = "\u001B[31m";
@@ -10,4 +10,8 @@ public class ConsoleColorCodes {
     public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_WHITE = "\u001B[37m";
+
+    public static String colorString(String colorCode, String str) {
+        return colorCode + str + ColorUtils.ANSI_RESET;
+    }
 }

@@ -1,6 +1,6 @@
 package ge.wero.dataStructuresAndAlgos.algos;
 
-import ge.wero.dataStructuresAndAlgos.utils.SortUtils;
+import ge.wero.dataStructuresAndAlgos.utils.ArrayUtils;
 
 /**
  * Bubble sort works by comparing elements from left to right
@@ -24,12 +24,13 @@ import ge.wero.dataStructuresAndAlgos.utils.SortUtils;
  */
 public class BubbleSort {
     public static final String TIME_COMPLEXITY = "O(n^2)";
+    public static final boolean isStable = true;
 
     public static void sort(int[] array) {
         for (int lastUnsortedIndex = array.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
             for (int i = 0; i < lastUnsortedIndex; i++) {
                 if (array[i] > array[i + 1]) {
-                    SortUtils.swap(array, i, i + 1);
+                    ArrayUtils.swap(array, i, i + 1);
                 }
             }
         }

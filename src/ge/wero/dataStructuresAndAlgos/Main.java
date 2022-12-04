@@ -1,45 +1,46 @@
 package ge.wero.dataStructuresAndAlgos;
 
 import ge.wero.dataStructuresAndAlgos.algos.BubbleSort;
-import ge.wero.dataStructuresAndAlgos.utils.ConsoleColorCodes;
+import ge.wero.dataStructuresAndAlgos.algos.SelectionSort;
+import ge.wero.dataStructuresAndAlgos.utils.ColorUtils;
+import ge.wero.dataStructuresAndAlgos.utils.ArrayUtils;
+
+import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
-        int[] array = new int[10];
-        array[0] = 12;
-        array[1] = -1;
-        array[2] = 17;
-        array[3] = -4;
-        array[4] = 11;
-        array[5] = 13;
-        array[6] = 1;
-        array[7] = 0;
-        array[8] = 20;
-        array[9] = -7;
-        int[] tmp = array;
-        System.out.println(colorString(ConsoleColorCodes.ANSI_CYAN, "Array before sorting:"));
-        printArray(array);
-        System.out.println(colorString(ConsoleColorCodes.ANSI_GREEN, "After bubble sort (Time Complecity: " + BubbleSort.TIME_COMPLEXITY + "):"));
-        BubbleSort.sort(array);
-        printArray(array);
+        int[] array = initializeRandomArray();
+        int[] tmp = array.clone();
+        System.out.println(ColorUtils.colorString(ColorUtils.ANSI_CYAN, "Array before sorting:"));
+        ArrayUtils.printArray(array);
+        bubbleSort(array,tmp);
         array = tmp;
+        SelectionSort(array,tmp);
     }
 
-    public static void printArray(int[] array) {
-        StringBuilder builder = new StringBuilder();
-        builder.append('[');
-        for (int i = 0; i < array.length; i++) {
-            builder.append(array[i]);
-            if (i != array.length - 1) {
-                builder.append("  ");
-            }
+    public static void bubbleSort(int[] array, int[] tmp){
+        System.out.println(ColorUtils.colorString(ColorUtils.ANSI_BLUE, "After bubble sort (Time Complecity: " + BubbleSort.TIME_COMPLEXITY + " ; Stable: " + BubbleSort.isStable + "):"));
+        BubbleSort.sort(array);
+        ArrayUtils.printArray(array);
+    }
+
+    public static void SelectionSort(int[] array, int[] tmp){
+        System.out.println(ColorUtils.colorString(ColorUtils.ANSI_BLUE, "After selection sort (Time Complecity: " + SelectionSort.TIME_COMPLEXITY + " ; Stable: " + SelectionSort.isStable + "):"));
+        SelectionSort.sort(array);
+        ArrayUtils.printArray(array);
+    }
+
+
+    public static int[] initializeRandomArray() {
+        Random random = new Random();
+        int size = random.nextInt(5) + 5;
+        int[] array = new int [size];
+        for(int i=0; i<array.length; i++){
+            array[i] = (random.nextInt(200)-100);
         }
-        builder.append(']');
-        System.out.println(builder);
+        return array;
     }
 
-    public static String colorString(String colorCode, String str) {
-        return colorCode + str + ConsoleColorCodes.ANSI_RESET;
-    }
+
 }
