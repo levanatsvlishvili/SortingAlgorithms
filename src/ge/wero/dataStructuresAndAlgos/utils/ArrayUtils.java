@@ -22,4 +22,12 @@ public class ArrayUtils {
         builder.append(']');
         System.out.println(builder);
     }
+
+    public static int[] copyArray(int[] array) {
+        int[] res = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            res[i] = array[i];
+        }
+        return res;
+    }
 }

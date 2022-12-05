@@ -26,11 +26,15 @@ public class BubbleSort {
     public static final String TIME_COMPLEXITY = "O(n^2)";
     public static final boolean isStable = true;
 
-    public static void sort(int[] array) {
+    public static void sort(int[] array, boolean printLog) {
         for (int lastUnsortedIndex = array.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
             for (int i = 0; i < lastUnsortedIndex; i++) {
                 if (array[i] > array[i + 1]) {
                     ArrayUtils.swap(array, i, i + 1);
+                    if (printLog){
+                        System.out.print("lastUnsortedIndex: "+lastUnsortedIndex+ " i: "+i+" ");
+                        ArrayUtils.printArray(array);
+                    }
                 }
             }
         }
