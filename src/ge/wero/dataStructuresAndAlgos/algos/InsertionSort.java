@@ -4,8 +4,10 @@ import ge.wero.dataStructuresAndAlgos.utils.ArrayUtils;
 
 /**
  * Insertion sort
- * <p>
- * <p>
+ * If sequence of objects is nearly sorted then insertion
+ * sort algorithms works nearly in linear time, because it
+ * does not make many shifting
+ *
  * initial array         [12  -1  17  -4  11  13]
  * firstUnsorted: 1 i:1  [12  12  17  -4  11  13]
  * firstUnsorted: 1 i:0  [-1  12  17  -4  11  13]

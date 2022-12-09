@@ -3,6 +3,7 @@ package ge.wero.dataStructuresAndAlgos;
 import ge.wero.dataStructuresAndAlgos.algos.BubbleSort;
 import ge.wero.dataStructuresAndAlgos.algos.InsertionSort;
 import ge.wero.dataStructuresAndAlgos.algos.SelectionSort;
+import ge.wero.dataStructuresAndAlgos.algos.ShellSort;
 import ge.wero.dataStructuresAndAlgos.utils.ColorUtils;
 import ge.wero.dataStructuresAndAlgos.utils.ArrayUtils;
 
@@ -13,6 +14,7 @@ public class Main {
     private static final boolean MAKE_BUBBLE_SORT = true;
     private static final boolean MAKE_SELECTION_SORT = true;
     private static final boolean MAKE_INSERTION_SORT = true;
+    private static final boolean MAKE_SHELL_SORT = true;
 
 
     public static void main(String[] args) {
@@ -20,16 +22,20 @@ public class Main {
         int[] tmp = ArrayUtils.copyArray(array);
         System.out.println(ColorUtils.colorString(ColorUtils.ANSI_CYAN, "Array before sorting:"));
         ArrayUtils.printArray(array);
-        if(MAKE_BUBBLE_SORT) {
+        if (MAKE_BUBBLE_SORT) {
             runBubbleSort(array);
             array = ArrayUtils.copyArray(tmp);
         }
-        if(MAKE_SELECTION_SORT) {
+        if (MAKE_SELECTION_SORT) {
             runSelectionSort(array);
             array = ArrayUtils.copyArray(tmp);
         }
-        if(MAKE_INSERTION_SORT){
+        if (MAKE_INSERTION_SORT) {
             runInsertionSort(array);
+            array = ArrayUtils.copyArray(tmp);
+        }
+        if(MAKE_SHELL_SORT){
+            runShellSort(array);
             array = ArrayUtils.copyArray(tmp);
         }
     }
@@ -49,6 +55,12 @@ public class Main {
     public static void runInsertionSort(int[] array) {
         System.out.println(ColorUtils.colorString(ColorUtils.ANSI_BLUE, "After insertion sort (Time Complecity: " + InsertionSort.TIME_COMPLEXITY + " ; Stable: " + InsertionSort.isStable + "):"));
         InsertionSort.sort(array, PRINT_LOG);
+        ArrayUtils.printArray(array);
+    }
+
+    public static void runShellSort(int[] array) {
+        System.out.println(ColorUtils.colorString(ColorUtils.ANSI_BLUE, "After shell sort (Time Complecity: " + ShellSort.TIME_COMPLEXITY + " ; Stable: " + ShellSort.isStable + "):"));
+        ShellSort.sort(array, PRINT_LOG);
         ArrayUtils.printArray(array);
     }
 
