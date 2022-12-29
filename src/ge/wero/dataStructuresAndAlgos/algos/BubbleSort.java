@@ -33,7 +33,7 @@ public class BubbleSort {
                     ArrayUtils.swap(array, i, i + 1);
                     if (printLog){
                         System.out.print("lastUnsortedIndex: "+lastUnsortedIndex+ " i: "+i+" ");
-                        ArrayUtils.printArray(array);
+                        System.out.println(ArrayUtils.arrayBody(array));
                     }
                 }
             }

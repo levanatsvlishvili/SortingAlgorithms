@@ -34,13 +34,13 @@ public class InsertionSort {
                 array[i] = array[i - 1];
                 if (printLog) {
                     System.out.print("firstUnsorted: " + firstUnsorted + " i:" + i + "  ");
-                    ArrayUtils.printArray(array);
+                    System.out.println(ArrayUtils.arrayBody(array));
                 }
             }
             array[i] = newElement;
             if (printLog) {
                 System.out.print("firstUnsorted: " + firstUnsorted + " i:" + i + "  ");
-                ArrayUtils.printArray(array);
+                System.out.println(ArrayUtils.arrayBody(array));
             }
 
         }

@@ -29,13 +29,13 @@ public class ShellSort {
                     j -= gap;
                     if(printLog){
                         System.out.print("gap: "+gap+" i: "+i+" j: "+j+"  ");
-                        ArrayUtils.printArray(array);
+                        System.out.println(ArrayUtils.arrayBody(array));
                     }
                 }
                 array[j] = newElem;
                 if(printLog){
                     System.out.print("gap: "+gap+" i: "+i+" j: "+j+"  ");
-                    ArrayUtils.printArray(array);
+                    System.out.println(ArrayUtils.arrayBody(array));
                 }
             }
 

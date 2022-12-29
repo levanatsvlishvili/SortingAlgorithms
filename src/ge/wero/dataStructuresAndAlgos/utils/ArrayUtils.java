@@ -10,7 +10,7 @@ public class ArrayUtils {
         array[j] = temp;
     }
 
-    public static void printArray(int[] array) {
+    public static String arrayBody(int[] array) {
         StringBuilder builder = new StringBuilder();
         builder.append('[');
         for (int i = 0; i < array.length; i++) {
@@ -20,7 +20,23 @@ public class ArrayUtils {
             }
         }
         builder.append(']');
-        System.out.println(builder);
+        return builder.toString();
+    }
+
+    public static String arrayBody(int[] array, int start, int end) {
+        if(start>=end){
+            return "";
+        }
+        StringBuilder builder = new StringBuilder();
+        builder.append('[');
+        for (int i = start; i < end; i++) {
+            builder.append(array[i]);
+            if (i != array.length - 1) {
+                builder.append("  ");
+            }
+        }
+        builder.append(']');
+        return builder.toString();
     }
 
     public static int[] copyArray(int[] array) {

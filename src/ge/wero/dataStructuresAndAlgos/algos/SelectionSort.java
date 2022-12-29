@@ -23,7 +23,7 @@ public class SelectionSort {
                 }
                 if (printLog){
                     System.out.print("lastUnsortedIndex: "+lastUnsortedIndex+ " i: "+i+" ");
-                    ArrayUtils.printArray(array);
+                    System.out.println(ArrayUtils.arrayBody(array));
                 }
             }
             ArrayUtils.swap(array,largestIndex, lastUnsortedIndex);
